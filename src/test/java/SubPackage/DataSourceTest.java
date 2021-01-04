@@ -20,9 +20,10 @@ public class DataSourceTest {
     public void testConnection() throws Exception {
         try(Connection connection = dataSource.getConnection()){
             System.out.println(connection);
-        } catch (Exception e)
-        {
+            System.out.println("DataSource Test 성공");
+        } catch (Exception e) {
             e.printStackTrace();
+            System.out.println("DataSource Test 실패");
         }
     }
 }

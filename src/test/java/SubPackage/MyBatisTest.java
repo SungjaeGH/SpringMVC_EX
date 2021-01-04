@@ -25,8 +25,10 @@ public class MyBatisTest {
     public void testSession() throws Exception {
         try (SqlSession session = sqlSessionFactoryBean.getObject().openSession()){
             System.out.println(session);
+            System.out.println("MyBatis 연결 성공");
         } catch (Exception e){
             e.printStackTrace();
+            System.out.println("MyBatis 연결 실패");
         }
     }
 }
