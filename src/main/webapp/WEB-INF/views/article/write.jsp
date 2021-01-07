@@ -24,8 +24,8 @@
                 <small>Optional description</small>
             </h1>
             <ol class="breadcrumb">
-                <li><a href="#"><i class="fa fa-dashboard"></i> Level</a></li>
-                <li class="active">Here</li>
+                <li><i class="fa fa-edit"></i> article</li>
+                <li class="active"><a href="${path}/article/write"> write</a></li>
             </ol>
         </section>
 
