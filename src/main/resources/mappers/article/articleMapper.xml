@@ -50,7 +50,7 @@
         WHERE article_no = #{articleNo}
     </delete>
 
-    <select id="listAll" resultType="ArticleVO">
+    <select id="listAll" resultType="ArticleResultMap">
         <![CDATA[
         SELECT
             article_no,
@@ -62,6 +62,38 @@
         FROM tbl_article
         WHERE article_no > 0
         ORDER BY article_no DESC, regdate DESC
+        ]]>
+    </select>
+
+    <select id="listPaging" resultMap="ArticleResultMap">
+        <![CDATA[
+        SELECT
+            article_no
+             , title
+             , content
+             , writer
+             , regdate
+             , viewcnt
+        FROM tbl_article
+        WHERE article_no > 0
+        ORDER BY article_no DESC, regdate DESC
+            LIMIT #{page}, 10
+        ]]>
+    </select>
+
+    <select id="listCriteria" resultMap="ArticleResultMap">
+        <![CDATA[
+        SELECT
+            article_no,
+            title,
+            content,
+            writer,
+            regdate,
+            viewcnt
+        FROM tbl_article
+        WHERE article_no > 0
+        ORDER BY article_no DESC, regdate DESC
+        LIMIT #{pageStart}, #{perPageNum}
         ]]>
     </select>
 
