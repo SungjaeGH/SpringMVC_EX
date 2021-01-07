@@ -6,21 +6,21 @@
 <mapper namespace="com.doubles.mvcboard.mappers.article.ArticleMapper">
 
     <insert id="create">
-        INSERT INTO tbl_article {
+        INSERT INTO tbl_article (
             article_no
             , title
             , content
             , writer
             , regdate
             , viewcnt
-            } VALUES {
-                #{articleNo}
-                , #{title}
-                , #{content}
-                , #{writer}
-                , #{regDate}
-                , #{viewCnt}
-            }
+        ) VALUES (
+            #{articleNo}
+            , #{title}
+            , #{content}
+            , #{writer}
+            , #{regDate}
+            , #{viewCnt}
+            )
     </insert>
 
     <select id="read" resultMap="ArticleResultMap">
@@ -70,7 +70,7 @@
         <id property="title" column="title" />
         <id property="content" column="content" />
         <id property="writer" column="writer" />
-        <id property="regDate" column="regDate" />
-        <id property="viewCnt" column="viewCnt" />
+        <id property="regDate" column="regdate" />
+        <id property="viewCnt" column="viewcnt" />
     </resultMap>
 </mapper>

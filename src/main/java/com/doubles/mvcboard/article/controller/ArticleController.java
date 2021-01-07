@@ -79,4 +79,14 @@ public class ArticleController {
 
         return "redirect:/article/list";
     }
+
+    // 삭제 처리
+    @RequestMapping(value = "/remove", method = RequestMethod.POST)
+    public String remove(@RequestParam("articleNo") int articleNo, RedirectAttributes redirectAttributes) throws Exception {
+        logger.info("remove...");
+        articleService.delete(articleNo);
+        redirectAttributes.addFlashAttribute("msg", "delSuccess");
+
+        return "redirect:/article/list";
+    }
 }

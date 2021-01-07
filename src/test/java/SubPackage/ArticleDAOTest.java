@@ -1,4 +1,3 @@
-/*
 package SubPackage;
 
 import com.doubles.mvcboard.article.domain.ArticleVO;
@@ -23,11 +22,11 @@ public class ArticleDAOTest {
 
     @Test
     public void testCreate() throws Exception {
-        ArticleVO article = new ArticleVO();
-        article.setTitle("새로운 글 작성 테스트 제목");
-        article.setContent("새로운 글 작성 테스트 내용");
-        article.setWriter("새로운 글 작성자");
-        articleDAO.create(article);
+        ArticleVO articleVO = new ArticleVO();
+        articleVO.setTitle("새로운 글 작성 테스트 제목");
+        articleVO.setContent("새로운 글 작성 테스트 내용");
+        articleVO.setWriter("새로운 글 작성자");
+        articleDAO.create(articleVO);
     }
 
     @Test
@@ -49,4 +48,3 @@ public class ArticleDAOTest {
         articleDAO.delete(1);
     }
 }
-*/
